@@ -1,0 +1,32 @@
+{
+  "name": "banda-vote",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c magenta,cyan \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:web": "vite --port 4317 --host 0.0.0.0",
+    "dev:api": "node server/index.js",
+    "build": "tsc -b && vite build",
+    "start": "NODE_ENV=production PORT=4317 node server/index.js",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@upstash/redis": "^1.39.0",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "concurrently": "^10.0.5",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0"
+  }
+}
